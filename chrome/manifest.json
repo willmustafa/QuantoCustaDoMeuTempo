@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "name": "Quanto isso custa do meu tempo?",
+    "version": "0.1.0",
+    "description": "Adiciona um texto em todas as páginas de compra mostrando quantas horas de trabalho você precisa para pagar esse item.",
+    "icons": {
+        "16": "/assets/icon-16.png",
+        "48": "/assets/icon-48.png",
+        "128": "/assets/icon-128.png"
+    },
+    "author": "Willian Mustafa",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["https://*.amazon.com.br/*", 
+            "https://*.submarino.com.br/*", 
+            "https://*.mercadolivre.com.br/*",
+            "https://*.americanas.com.br/*",
+            "https://*.casasbahia.com.br/*",
+            "https://*.netshoes.com.br/*",
+            "https://*.aliexpress.com/*",
+            "https://*.shopee.com.br/*",
+            "https://*.magazineluiza.com.br/*",
+            "https://*.shoptime.com.br/*",
+            "https://*.pontofrio.com.br/*",
+            "https://*.kabum.com.br/*",
+            "https://*.kalunga.com.br/*",
+            "https://*.fastshop.com.br/*",
+            "https://*.buscape.com.br/*"
+        ],
+        "css": ["common.css"],
+        "js": ["stores.js"],
+        "run_at": "document_end"
+    },
+    {
+        "matches": [
+            "https://*.google.com/*"
+        ],
+        "css": ["common.css"],
+        "js": ["store-google.js"],
+        "run_at": "document_end"
+    }],
+    "permissions": [
+        "storage", "tabs"
+    ]
+}
