@@ -1,6 +1,6 @@
 const siteClasses = {
     'www.amazon.com.br': {
-        price: '.a-price.aok-align-center .a-offscreen',
+        price: '.a-price .a-offscreen',
         putHere: '#corePrice_feature_div'
     },
     'www.submarino.com.br': {
@@ -74,6 +74,10 @@ const siteClasses = {
     'www.google.com': {
         price: '.Price_Price__1lPWw>a>strong',
         putHere: '.Price_Price__1lPWw'
+    },
+    'www.livrariasfamiliacrista.com.br': {
+        price: '.preco-comprar .price[id^=product]',
+        putHere: '.preco-comprar .price-box'
     }
 
 }
