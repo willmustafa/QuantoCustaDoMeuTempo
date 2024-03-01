@@ -11,7 +11,7 @@ window.addEventListener('load', async function (){
 
     if(currentTab == 'www.google.com' && document.location.href.includes('tbm=shop')){
 
-        chrome.storage.sync.get(['salario'], function(result) {
+        chrome.storage.sync.get(['salario']).then(result => {
             const salarioInput = result.salario;
     
             const valorHora = salarioInput / (8 * 5 * 4);

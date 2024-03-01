@@ -1,4 +1,5 @@
 chrome.runtime.onInstalled.addListener(() => {
-  let salarioAtual = '1200';
-  chrome.storage.sync.set({salario: salarioAtual}, function() {});
+  chrome.storage.sync.set({salario: '1200'});
 });
+
+chrome.storage.sync.get(['salario']).then(res => {console.log(res.salario)})
