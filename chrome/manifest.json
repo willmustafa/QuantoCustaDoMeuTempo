@@ -34,11 +34,13 @@
         "https://*.fastshop.com.br/*",
         "https://*.buscape.com.br/*"
       ],
+      "css": ["common.css"],
       "js": ["stores.js"],
       "run_at": "document_end"
     },
     {
       "matches": ["https://*.google.com/*"],
+      "css": ["common.css"],
       "js": ["store-google.js"],
       "run_at": "document_end"
     }

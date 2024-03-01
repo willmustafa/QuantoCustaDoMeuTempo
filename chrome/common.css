@@ -1,0 +1,18 @@
+.button-hours {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: default;
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+.popup-salario {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
