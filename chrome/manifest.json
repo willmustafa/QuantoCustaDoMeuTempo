@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Quanto isso custa do meu tempo?",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Adiciona um texto em todas as páginas de compra mostrando quantas horas de trabalho você precisa para pagar esse item.",
   "icons": {
     "16": "/assets/icon-16.png",
