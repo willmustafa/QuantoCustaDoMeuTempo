@@ -45,5 +45,5 @@
       "run_at": "document_end"
     }
   ],
-  "permissions": ["storage", "tabs"]
+  "permissions": ["storage"]
 }
