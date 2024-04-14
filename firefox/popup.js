@@ -1,22 +1,26 @@
-const inputSalario = document.getElementById('salario')
+const inputSalario = document.getElementById("salario");
 
-browser.storage.sync.get(['salario']).then((res) => {
-    inputSalario.value = res.salario;
+inputSalario.addEventListener("input", function () {
+  this.value = this.value.replace(/[^0-9,]/g, "");
+
+  if ((this.value.match(/,/g) || []).length > 1)
+    this.value = this.value.replace(/,$/, "");
 });
 
-document.getElementById('saveSalario').addEventListener("click", () => {
-    browser.storage.sync.set({
-        salario: inputSalario.value
-    });
+browser.storage.sync.get(["salario"]).then((res) => {
+  inputSalario.value = String(res.salario).replace(".", ",");
+});
 
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbar");
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    // Add the "show" class to DIV
-    x.className = "show";
+  browser.storage.sync.set({
+    salario: parseFloat(inputSalario.value.replace(",", ".")),
+  });
 
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function () {
-        x.className = x.className.replace("show", "");
-    }, 3000);
+  const x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
 });
