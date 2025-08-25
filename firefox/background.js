@@ -1,5 +1,10 @@
-browser.runtime.onInstalled.addListener(() => {
-  browser.storage.sync.set({salario: '1200'});
-});
+browser.runtime.onInstalled.addListener(async () => {
+    const salario = await browser.storage.sync.get(["salario"]).then((res) =>
+        res.salario
+    ) || (120000 / 100).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+    });
 
-browser.storage.sync.get(['salario']).then(res => {console.log(res.salario)})
+  browser.storage.sync.set({salario});
+});
